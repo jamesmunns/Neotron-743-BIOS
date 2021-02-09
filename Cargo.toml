@@ -19,6 +19,9 @@ panic-probe = { version = "0.1.0", features = ["print-defmt"] }
 version = "0.8"
 features = ["stm32h743v", "rt"]
 
+[dependencies.neotron-common-bios]
+path = "./vendor/Neotron-Common-BIOS"
+
 [features]
 # set logging levels here
 default = [
