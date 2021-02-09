@@ -5,9 +5,9 @@
 #![no_main]
 #![no_std]
 
-use neotron_743_bios as _; // global logger + panicking-behavior + memory layout
 use core::fmt::Write;
 use cortex_m_rt::entry;
+use neotron_743_bios as _; // global logger + panicking-behavior + memory layout
 
 /// BIOS Version
 static BIOS_VERSION: &'static str = "v0.1.0";
@@ -23,7 +23,6 @@ struct Hardware {
 fn main() -> ! {
     defmt::info!("Hello, world!");
 
-
     // Set up the hardware
     let mut h = hardware_setup();
 
@@ -35,8 +34,6 @@ fn main() -> ! {
     // * load it from the first sector of an SD card,
     // * search in Flash for it, or
     // * jump to a specific location in Flash.
-
-
 
     // Uh-oh - tell the user a bad thing happened
     defmt::error!("No operating system found.");
